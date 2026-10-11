@@ -5,47 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Установка ВКонтакте</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background: #f5f5f5;
-        }
-        .container {
-            text-align: center;
-            padding: 40px;
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            max-width: 400px;
-        }
-        h1 { font-size: 22px; margin-bottom: 10px; }
-        p { color: #666; font-size: 14px; margin-bottom: 24px; }
-        .install-btn {
-            display: inline-block;
-            background: #007aff;
-            color: #fff;
-            padding: 16px 32px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 600;
-            transition: background 0.2s;
-        }
-        .install-btn:active { background: #0056b3; }
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; margin: 0; padding: 20px; background: #f5f5f7; color: #1d1d1f; }
+        .container { max-width: 600px; margin: 0 auto; background: #fff; border-radius: 18px; padding: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        h1 { font-size: 24px; margin-top: 0; }
+        .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px 16px; border-radius: 8px; font-size: 14px; margin-bottom: 24px; }
+        .method { border: 1px solid #e5e5ea; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+        .method h3 { margin-top: 0; font-size: 17px; }
+        .method p { font-size: 14px; color: #6e6e73; margin: 8px 0; }
+        .btn { display: inline-block; background: #007aff; color: #fff; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: 600; font-size: 15px; margin-top: 8px; }
+        .btn-secondary { background: #34c759; }
+        .btn-dark { background: #1d1d1f; }
+        .note { font-size: 12px; color: #8e8e93; margin-top: 12px; }
+        .divider { text-align: center; margin: 24px 0; color: #8e8e93; font-size: 13px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>ВКонтакте</h1>
-        <p>Нажмите кнопку ниже, чтобы установить приложение на iPhone</p>
-        <a class="install-btn"
-           href="itms-services://?action=download-manifest&url=https://твой-домен.ru/vk.plist">
-            Установить
-        </a>
+        <h1>📱 Установка ВКонтакте</h1>
+
+        <div class="warning">
+            ⚠️ На iOS 17.2+ прямая установка через сайт невозможна. Apple удалила поддержку <code>itms-services</code>. Используйте один из способов ниже.
+        </div>
+
+        <!-- Способ 1: DIYORDE Store -->
+        <div class="method">
+            <h3>1. DIYORDE Store (рекомендуется)</h3>
+            <p>Готовый магазин с каталогом приложений (ВК, банки, МАКС). Работает по подписке, оплата с рублёвых карт.</p>
+            <a class="btn" href="https://diyorde.ru" target="_blank">Перейти на сайт DIYORDE</a>
+            <p class="note">После установки магазина найдите ВКонтакте в каталоге и установите оттуда.</p>
+        </div>
+
+        <!-- Способ 2: AltStore / Sideloadly -->
+        <div class="method">
+            <h3>2. AltStore или Sideloadly (через компьютер)</h3>
+            <p>Установите приложение на iPhone с помощью ПК/Mac. Подпись действует 7 дней (бесплатный Apple ID) или 1 год (платный аккаунт разработчика).</p>
+            <a class="btn btn-secondary" href="https://altstore.io" target="_blank">Скачать AltStore</a>
+            <a class="btn btn-dark" href="https://sideloadly.io" target="_blank">Скачать Sideloadly</a>
+            <p class="note">Скачайте наш <code>vk.ipa</code> и перетащите его в программу.</p>
+            <a class="btn" href="https://твой-логин.github.io/твой-репозиторий/vk.ipa">Скачать vk.ipa</a>
+        </div>
+
+        <!-- Способ 3: ESign / Scarlet -->
+        <div class="method">
+            <h3>3. ESign / Scarlet (прямо на iPhone)</h3>
+            <p>Инструменты для подписи и установки IPA прямо на устройстве. Требуют настройки DNS-профиля и сертификата.</p>
+            <a class="btn btn-secondary" href="https://applejr.net" target="_blank">Инструкция по ESign/Scarlet</a>
+            <p class="note">Подробные гайды: <a href="https://github.com/AppleJrNet/AppleJr">AppleJr на GitHub</a>[reference:1].</p>
+        </div>
+
+        <div class="divider">— или —</div>
+
+        <!-- Прямая ссылка (не работает на iOS 17.2+) -->
+        <div class="method" style="opacity: 0.6;">
+            <h3>❌ Прямая установка (не работает)</h3>
+            <p>Этот способ работал на iOS до 17.2. На вашей версии iOS кнопка ниже не сработает.</p>
+            <a class="btn" style="background: #8e8e93; pointer-events: none;" href="#">Установить (недоступно)</a>
+        </div>
     </div>
 </body>
 </html>
